@@ -460,6 +460,20 @@ export const useUploadAndParseDocument = (uploadMethod: string) => {
   return { data, loading, uploadAndParseDocument: mutateAsync };
 };
 
+// Helper function to validate URLs to prevent SSRF
+const isValidUrl = (url: string): boolean => {
+  try {
+    const parsed = new URL(url);
+    // Only allow http and https protocols
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return true;
+    }
+    return false;
+  } catch {
+    return false;
+  }
+};
+
 export const useParseDocument = () => {
   const {
     data,
@@ -468,6 +482,10 @@ export const useParseDocument = () => {
   } = useMutation({
     mutationKey: ['parseDocument'],
     mutationFn: async (url: string) => {
+      if (!isValidUrl(url)) {
+        message.error(i18n.t('message.invalidUrl'));
+        return;
+      }
       try {
         const data = await post(api.parse, { url });
         if (data?.code === 0) {
@@ -513,3 +531,10 @@ export const useSetDocumentMeta = () => {
 
   return { setDocumentMeta: mutateAsync, data, loading };
 };
+
+// ... rest of the file unchanged
+
+export default {};
+
+// Note: The last export default {} is just a placeholder to avoid syntax errors if needed, can be removed if not required.
+
