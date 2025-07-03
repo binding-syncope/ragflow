@@ -66,7 +66,6 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.4",
     "dayjs": "^1.11.10",
-    "dompurify": "^3.1.6",
     "eventsource-parser": "^1.1.2",
     "human-id": "^4.1.1",
     "i18next": "^23.7.16",
@@ -107,7 +106,8 @@
     "unist-util-visit-parents": "^6.0.1",
     "uuid": "^9.0.1",
     "zod": "^3.23.8",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "dompurify": "^3.2.4"
   },
   "devDependencies": {
     "@react-dev-inspector/umi4-plugin": "^2.0.1",
