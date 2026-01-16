@@ -60,7 +60,6 @@
     "@xyflow/react": "^12.3.6",
     "ahooks": "^3.7.10",
     "antd": "^5.12.7",
-    "axios": "^1.6.3",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
@@ -107,7 +106,8 @@
     "unist-util-visit-parents": "^6.0.1",
     "uuid": "^9.0.1",
     "zod": "^3.23.8",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "axios": "^1.8.2"
   },
   "devDependencies": {
     "@react-dev-inspector/umi4-plugin": "^2.0.1",
